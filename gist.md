@@ -4,7 +4,7 @@ Introductory paragraph (replace this with your text)
 
 ## Summary
 
-This regex is how to match a Hex Value! In this document I will explain all the parts of the regex as well as the components of regex that are not displayed in this particular one. The example of the matching a Hex Value is as shown: 
+This regex is how to match a Hex Value! In this document I will explain all the parts of the regex as well as the components of regex that are not displayed in this particular one. The example of the matching a Hex Value is as shown: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
 
 ## Table of Contents
 
