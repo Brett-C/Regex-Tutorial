@@ -30,8 +30,11 @@ the two characters `^` and `$` are both anchors. `^` states that a string that b
 Quantifiers set the limits of the string that a regex matches. They typically include the minimum and maximum number of characters that a regex is looking for. They also tend to match as many occurrences of a particular pattern as possible and include the following symbols:
 
 `*` - matches the pattern zero or more times
+
 `+` - matches the pattern one or more times
+
 `?` - matches the pattern zero or one time
+
 `{}` - the curly brackets provide 3 possible different ways to set limits for a match. These are:
     `{ n }` -  matches the pattern exactly `n` times 
     `{ n, }` - matches the pattern at least `n` times
