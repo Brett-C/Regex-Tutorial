@@ -113,4 +113,8 @@ A character escape can be a character that would be interpreted literally. To do
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+I am a Dev in the middle of a bootcamp who is learning all about how Regex works. I used https://coding-boot-camp.github.io/full-stack/computer-science/regex-tutorial to help learn and get all of  my info from to write this gist.
+
+My GitHub information is:
+
+https://github.com/Brett-C
