@@ -36,9 +36,12 @@ Quantifiers set the limits of the string that a regex matches. They typically in
 `?` - matches the pattern zero or one time
 
 `{}` - the curly brackets provide 3 possible different ways to set limits for a match. These are:
-    `{ n }` -  matches the pattern exactly `n` times 
-    `{ n, }` - matches the pattern at least `n` times
-    `{ n, x }` - matches the pattern from a minimum of `n` times to a maximum of `x` times.
+
+`{ n }` -  matches the pattern exactly `n` times 
+
+`{ n, }` - matches the pattern at least `n` times
+
+`{ n, x }` - matches the pattern from a minimum of `n` times to a maximum of `x` times.
 
 If we throw a `?` behind any of the quantifiers they will match as few occurrences as possible instead of matching as many as possible. If we take a look at our Hex Value regex we can look at what quantifiers it shows. 
 
