@@ -4,7 +4,11 @@ Regular Expressions are a series of special characters that define a search. The
 
 ## Summary
 
-This regex is how to match a Hex Value! In this document I will explain all the parts of the regex as well as the components of regex that are not displayed in this particular one. The example of the matching a Hex Value regex is as shown: `^#?([a-f0-9]{6}|[a-f0-9]{3})$`. By clicking on the list of components in the Table of Contents, you will be taken to that particular component and there will be an explination of what is happening behind the scenes for that particular component. We will use the Hex Value regex as an example when applicable.
+This regex is how to match a Hex Value! In this document I will explain all the parts of the regex as well as the components of regex that are not displayed in this particular one. The example of the matching a Hex Value regex is as shown:
+
+ `^#?([a-f0-9]{6}|[a-f0-9]{3})$`
+ 
+By clicking on the list of components in the Table of Contents, you will be taken to that particular component and there will be an explination of what is happening behind the scenes for that particular component. We will use the Hex Value regex as an example when applicable.
 
 ## Table of Contents
 
@@ -23,7 +27,11 @@ First lets start of with a list of regex components that are out there. Regex us
 
 ### Anchors
 
-the two characters `^` and `$` are both anchors. `^` states that a string that begins with the characters that follow it. Just remember that regex is case-sensitive so the string has to be an exact match to what ever follows the anchor so, `^Hello` only allows for `Hello` or something like `Hello World` match, but `hello` and `hello world` do not. `$` is the other example of anchors, only it states that a string that ends with the characters that come before it, rather than after. In our example `^#?([a-f0-9]{6}|[a-f0-9]{3})$` we have both anchors! This means that have to start and end with the string for it to match the regex. 
+the two characters `^` and `$` are both anchors. `^` states that a string that begins with the characters that follow it. Just remember that regex is case-sensitive so the string has to be an exact match to what ever follows the anchor so, `^Hello` only allows for `Hello` or something like `Hello World` match, but `hello` and `hello world` do not. `$` is the other example of anchors, only it states that a string that ends with the characters that come before it, rather than after. In our example 
+
+`^#?([a-f0-9]{6}|[a-f0-9]{3})$`
+
+we have both anchors! This means that have to start and end with the string for it to match the regex. 
 
 ### Quantifiers
 
@@ -59,11 +67,23 @@ It appears that we have one grouping construct within our regex `([a-f0-9]{6}|[a
 
 ### Bracket Expressions
 
-Bracket Expressions are a range of characters that are inside a set of square brackers `[]`. They can also be known as positive character groups because they outline the characters that we want to include. For example the bracket expression `[abc]` would look for a string that contains a, b, or c, no matter how long the string is, so `brett`, `abracadabra`, and `aaa` would all match, but `Brett` would not . To keep everything nice and neat, we usually use a hyphen (-) between alphanumeric characters, or letters and numbers only, to represent a range of the possible characters. This means that `[a-f]` will look for the same thing as `[abcdef]`. But remember, regex is case sensitive so it will only match lower case letters a, b, c, d, e, and f. If we wanted a string to be able to include let's say all letters upper case or lower case, numbers and even some special characters like the hyphen(-) and the underscore(_) we could write it out like this `[a-zA-Z0-9_-]`. It is also good to note that a bracket expression can be turned into a negative character group by adding the `^` sypbole to the start of the expression inside the brackets. This means that we want a string to exclude the characters that are inside the brackets. a common example is matching a string that doesn't have any vowels, so the pattern would show `[^aeiouAEIOU]`. This would find any string that does not include lowercase or uppercase vowels. So let's remind you of our example regex that we wanted to disect. `^#?([a-f0-9]{6}|[a-f0-9]{3})$` shows 2 sets of bracket expressions. They state that we are looking for a string that only uses the characters a-z and 0-9. So if had for example `#abc123` it would match, but `#abz123` does not. 
+Bracket Expressions are a range of characters that are inside a set of square brackers `[]`. They can also be known as positive character groups because they outline the characters that we want to include. For example the bracket expression `[abc]` would look for a string that contains a, b, or c, no matter how long the string is, so `brett`, `abracadabra`, and `aaa` would all match, but `Brett` would not . To keep everything nice and neat, we usually use a hyphen (-) between alphanumeric characters, or letters and numbers only, to represent a range of the possible characters. This means that `[a-f]` will look for the same thing as `[abcdef]`. But remember, regex is case sensitive so it will only match lower case letters a, b, c, d, e, and f. If we wanted a string to be able to include let's say all letters upper case or lower case, numbers and even some special characters like the hyphen(-) and the underscore(_) we could write it out like this `[a-zA-Z0-9_-]`. It is also good to note that a bracket expression can be turned into a negative character group by adding the `^` sypbole to the start of the expression inside the brackets. This means that we want a string to exclude the characters that are inside the brackets. a common example is matching a string that doesn't have any vowels, so the pattern would show `[^aeiouAEIOU]`. This would find any string that does not include lowercase or uppercase vowels. So let's remind you of our example regex that we wanted to disect. 
+
+`^#?([a-f0-9]{6}|[a-f0-9]{3})$`
+
+shows 2 sets of bracket expressions. They state that we are looking for a string that only uses the characters a-z and 0-9. So if had for example `#abc123` it would match, but `#abz123` does not. 
 
 ### Character Classes
 
+A character class within a regex defines a set of characters, any one of which can occur in an input string to fulfill a match. The bracket expression discussed earlier including positive and negative character groups, are also considered character classes. Some other examples of character classes are:
+`.` - matches any character except the newline charcter (\n).
+`\d` - matches any Arabic numeral digit. This class is the same to the bracket expression `[0-9]`.
+`\w` matches any alphanumeric character from the basic Latin alphabet, including the underscore. It is the same as the bracket expression `[A-Za-z0-9_]`.
+`\s` matches a single whitespace character, including tabs and line breaks.
 
+The last 3 character classes can be changed to do the inverse match by capitalizing the letter character which means `\D `would match a non-digit character. 
+
+Unfortunately our Hex Value regex does not have any Character Escapes in it.
 
 ### The OR Operator
 
@@ -79,7 +99,7 @@ We have 1 OR operator within the grouping construct. `([a-f0-9]{6}|[a-f0-9]{3})`
 
 ### Character Escapes
 
-
+A character escape can be a character that would be interpreted literally. To do this, we need to use the backslash "\" key. for example if we used the open curly brace "{" it would be used to begin a quantifier, but by adding a backslash before the open curly brace (\{) it means that the regex should look for the open curly brace character instead of beginning to define a quantifier. This is pretty common when looking for strings with special characters that are the same as a particular component of a regex. On a side note it is important to understand that all special characters, including the backslash, lose their special significance inside bracket expressions. Unfortunately our Hex Value regex does not have any Character Escapes in it. 
 
 ## Author
 
