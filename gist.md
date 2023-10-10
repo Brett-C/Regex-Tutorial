@@ -109,7 +109,7 @@ Flags are placed at the end of a regex, after the second slash, and they define 
 
 ### Character Escapes
 
-A character escape can be a character that would be interpreted literally. To do this, we need to use the backslash "\" key. for example if we used the open curly brace "{" it would be used to begin a quantifier, but by adding a backslash before the open curly brace (\{) it means that the regex should look for the open curly brace character instead of beginning to define a quantifier. This is pretty common when looking for strings with special characters that are the same as a particular component of a regex. On a side note it is important to understand that all special characters, including the backslash, lose their special significance inside bracket expressions. Unfortunately our Hex Value regex does not have any Character Escapes in it. 
+A character escape can be a character that would be interpreted literally. To do this, we need to use the backslash `\` key. for example if we used the open curly brace `{` it would be used to begin a quantifier, but by adding a backslash before the open curly brace `\{` it means that the regex should look for the open curly brace character instead of beginning to define a quantifier. This is pretty common when looking for strings with special characters that are the same as a particular component of a regex. On a side note it is important to understand that all special characters, including the backslash, lose their special significance inside bracket expressions. Unfortunately our Hex Value regex does not have any Character Escapes in it. 
 
 ## Author
 
