@@ -76,14 +76,18 @@ shows 2 sets of bracket expressions. They state that we are looking for a string
 ### Character Classes
 
 A character class within a regex defines a set of characters, any one of which can occur in an input string to fulfill a match. The bracket expression discussed earlier including positive and negative character groups, are also considered character classes. Some other examples of character classes are:
+
 `.` - matches any character except the newline charcter (\n).
+
 `\d` - matches any Arabic numeral digit. This class is the same to the bracket expression `[0-9]`.
+
 `\w` matches any alphanumeric character from the basic Latin alphabet, including the underscore. It is the same as the bracket expression `[A-Za-z0-9_]`.
+
 `\s` matches a single whitespace character, including tabs and line breaks.
 
 The last 3 character classes can be changed to do the inverse match by capitalizing the letter character which means `\D `would match a non-digit character. 
 
-Unfortunately our Hex Value regex does not have any Character Escapes in it.
+Unfortunately our Hex Value regex does not have any Character classes in it except for our bracket expressions.
 
 ### The OR Operator
 
@@ -95,7 +99,13 @@ We have 1 OR operator within the grouping construct. `([a-f0-9]{6}|[a-f0-9]{3})`
 
 ### Flags
 
+Flags are placed at the end of a regex, after the second slash, and they define additional functionality or limits for the regex. There are 6 different flags that can be used either separately or together in any order. They are all optional and are not required for a regex. The three most common flags that are used are:
 
+`g` - Global search: the regex will be tested against all possible matches in a string.
+
+`i` - Case-insensitive search: case should be ignored while attempting a match in a string.
+
+`m` - Multi-line search: a multi-line input string should be treated as multiple lines. 
 
 ### Character Escapes
 
